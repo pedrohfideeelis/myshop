@@ -41,7 +41,7 @@ export const AddToCartButton = styled.button`
   border-radius: 5px;
   height: 30px;
   padding: 0 1rem;
-  background-color: cornflowerblue;
+  background-color: #6095ed;
   color: white;
   display: flex;
   align-items: center;
@@ -49,6 +49,6 @@ export const AddToCartButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: darkblue;
+    background-color: #3595ed;
   }
 `;

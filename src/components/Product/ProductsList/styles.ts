@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 4rem auto;
-  padding: 0 2rem;
+  padding: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  & > * {
+    flex: 1 300px;
+  }
 `;
