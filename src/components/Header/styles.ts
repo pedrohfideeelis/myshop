@@ -9,17 +9,22 @@ export const HeaderTitle = styled.h1`
   font-size: 1.6rem;
 `;
 
-export const LoginButton = styled.button`
+interface LoginButtonProps{
+  isLogged: boolean
+}
+
+export const LoginButton = styled.button<LoginButtonProps>`
   border: none;
   border-radius: 5px;
   height: 30px;
   padding: 0 1rem;
-  background-color: royalblue;
+  background-color:   ${(props) => props.isLogged ? "firebrick" : "darkcyan"};
   color: white;
 
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  cursor: pointer;
 `;
 
 export const CartButton = styled.button`
@@ -27,12 +32,13 @@ export const CartButton = styled.button`
   border-radius: 5px;
   height: 30px;
   padding: 0 1rem;
-  background-color: firebrick;
+  background-color: dodgerblue;
   color: white;
 
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  cursor: pointer;
 `;
 
 export const Wrapper = styled.div`

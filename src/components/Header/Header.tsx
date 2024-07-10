@@ -1,15 +1,22 @@
+import { useState } from "react";
 import * as S from "./styles";
-import { FiLogIn, FiShoppingCart } from "react-icons/fi";
+import { FiLogIn, FiLogOut, FiShoppingCart } from "react-icons/fi";
 
 export const Header: React.FC = () => {
+  const [isLogged, setIsLogged] = useState(false);
+
+  function toggleLogin(){
+    setIsLogged(!isLogged)
+  }
+
   return (
     <S.StyledHeader>
       <S.Wrapper>
         <S.HeaderTitle>MyShop.</S.HeaderTitle>
         <S.ButtonsWrapper>
-          <S.LoginButton>
-            Login
-            <FiLogIn />
+          <S.LoginButton isLogged={isLogged} onClick={toggleLogin}>
+            {isLogged ? "Logout" : "Login"}
+            {isLogged? <FiLogOut/> : <FiLogIn />}
           </S.LoginButton>
           <S.CartButton>
             Carrinho
