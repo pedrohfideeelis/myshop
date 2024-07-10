@@ -62,10 +62,5 @@ export const AddToCartButton = styled.button`
   background-color: #6095ed;
   color: white;
   align-items: center;
-  gap: 0.4rem;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #3595ed;
-  }
+  gap: 0.4rem;;
 `;

@@ -24,7 +24,6 @@ export const LoginButton = styled.button<LoginButtonProps>`
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  cursor: pointer;
 `;
 
 export const CartButton = styled.button`
@@ -38,7 +37,6 @@ export const CartButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  cursor: pointer;
 `;
 
 export const Wrapper = styled.div`

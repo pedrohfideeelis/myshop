@@ -14,5 +14,13 @@ export const GlobalStyles = createGlobalStyle`
     body, button, input{
         font-family: 'Inter', sans-serif;
     }
+
+    button{
+        cursor: pointer;
+
+        &:hover{
+            filter: brightness(1.1);
+        }
+    }
 }
 `;
