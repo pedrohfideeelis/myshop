@@ -3,12 +3,23 @@ import * as S from "./styles";
 import { FiShoppingCart } from "react-icons/fi";
 import { Product } from "../Product";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
+import { useDispatch } from "react-redux";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+
+  const dispatch = useDispatch();
+
+  function handleAddProducToCart() {
+    dispatch({
+      type: "cart/add-product",
+      payload: product,
+    })
+  }
+
   return (
     <S.Card>
       <S.ProductImg src={product.image} alt={product.title} />
@@ -22,12 +33,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <AiOutlineStar key={index} />
             )
           )}
-           ({`${product.rating.rate}`})
+          ({`${product.rating.rate}`})
         </S.Review>
         <S.Price>${product.price}</S.Price>
       </S.ReviewPriceContainer>
       <S.ButtonWrapper>
-        <S.AddToCartButton>
+        <S.AddToCartButton onClick={handleAddProducToCart}>
           Adicionar ao Carrinho <FiShoppingCart />
         </S.AddToCartButton>
       </S.ButtonWrapper>
