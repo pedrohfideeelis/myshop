@@ -7,8 +7,8 @@ interface ContainerProps {
 export const Container = styled.aside<ContainerProps>`
   position: fixed;
   top: 0;
-  right: ${(props) => (props.showCart ? "0" : "-500px")};
-  width: 500px;
+  right: ${(props) => (props.showCart ? "0" : "-300px")};
+  width: 300px;
   height: 100vh;
   background-color: white;
   padding: 2rem;

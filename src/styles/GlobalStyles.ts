@@ -20,6 +20,7 @@ export const GlobalStyles = createGlobalStyle`
 
         &:hover{
             filter: brightness(1.1);
+            transition: filter 0.3s;
         }
     }
 }
