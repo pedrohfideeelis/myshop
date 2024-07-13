@@ -1,14 +1,34 @@
 import { useState } from "react";
 import { FiLogIn, FiLogOut, FiShoppingCart } from "react-icons/fi";
 import { Cart } from "../Cart/Cart";
+import { useDispatch, useSelector } from 'react-redux';
+import { RootReducer } from "../../redux/root-reducer";
 import * as S from "./styles";
 
 export const Header: React.FC = () => {
-  const [isLogged, setIsLogged] = useState(false);
+  const { user } = useSelector((rootReducer: RootReducer) => rootReducer.userReducer);
   const [showCart, setShowCart] = useState(false);
+  const dispatch = useDispatch();
+  const isLogged = user !== null;
 
-  function toggleLogin() {
+  /*function toggleLogin() {
     setIsLogged(!isLogged)
+  }*/
+
+  function handleUserAuth() {
+    if (user === null) {
+      dispatch({
+        type: "user/login",
+        payload: {
+          name: 'Pedro Henrique',
+          email: 'pedro@gmail.com'
+        },
+      });
+    } else {
+      dispatch({
+        type: "user/logout"
+      })
+    }
   }
 
   return (
@@ -16,7 +36,7 @@ export const Header: React.FC = () => {
       <S.Wrapper>
         <S.HeaderTitle>MyShop.</S.HeaderTitle>
         <S.ButtonsWrapper>
-          <S.LoginButton isLogged={isLogged} onClick={toggleLogin}>
+          <S.LoginButton isLogged={isLogged} onClick={handleUserAuth}>
             {isLogged ? "Logout" : "Login"}
             {isLogged ? <FiLogOut /> : <FiLogIn />}
           </S.LoginButton>
@@ -26,7 +46,7 @@ export const Header: React.FC = () => {
           </S.CartButton>
         </S.ButtonsWrapper>
       </S.Wrapper>
-      <Cart showCart ={showCart}/>
+      <Cart showCart={showCart} />
     </S.StyledHeader>
   );
 };
