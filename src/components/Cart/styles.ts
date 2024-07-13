@@ -7,8 +7,8 @@ interface ContainerProps {
 export const Container = styled.aside<ContainerProps>`
   position: fixed;
   top: 0;
-  right: ${(props) => (props.showCart ? "0" : "-300px")};
-  width: 300px;
+  right: ${(props) => (props.showCart ? "0" : "-400px")};
+  width: 400px;
   height: 100vh;
   background-color: white;
   padding: 2rem;
@@ -21,4 +21,7 @@ export const Title = styled.h1`
   font-weight: 800;
   font-size: 1.6rem;
   color: #252525;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 `;
