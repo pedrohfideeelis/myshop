@@ -3,7 +3,7 @@ interface User {
   email: string;
 }
 
-interface UserState {
+export interface UserState {
   user: User | null;
 }
 
@@ -11,7 +11,7 @@ const initalState: UserState = {
   user: null,
 };
 
-interface UserAction {
+export interface UserAction {
   type: string;
   payload?: User;
 }

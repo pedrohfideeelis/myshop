@@ -1,6 +1,6 @@
 import { Product } from "../../components/Product/Product";
 
-interface CartState {
+export interface CartState {
   cart: Product[];
 }
 
@@ -8,7 +8,7 @@ const initalState: CartState = {
   cart: [],
 };
 
-interface CartAction {
+export interface CartAction {
   type: string;
   payload: Product;
 }
