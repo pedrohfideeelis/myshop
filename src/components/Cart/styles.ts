@@ -25,3 +25,36 @@ export const Title = styled.h1`
   align-items: center;
   gap: 0.5rem;
 `;
+
+export const CartProductsList = styled.ul`
+  padding: 2rem 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+export const CartProductItem = styled.li`
+`;
+
+export const CartProductImage = styled.img``;
+
+export const HeadContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 120px;
+`;
+
+export const CloseCartButton = styled.button<ContainerProps>`
+  border: none;
+  right: ${(props) => (props.showCart ? "0" : "-400px")};
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  background-color: #ae474c;
+  color: white;
+`;
+
+export const CartTotal = styled.strong `
+
+`

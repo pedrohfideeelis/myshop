@@ -11,10 +11,6 @@ export const Header: React.FC = () => {
   const dispatch = useDispatch();
   const isLogged = user !== null;
 
-  /*function toggleLogin() {
-    setIsLogged(!isLogged)
-  }*/
-
   function handleUserAuth() {
     if (user === null) {
       dispatch({
@@ -46,7 +42,7 @@ export const Header: React.FC = () => {
           </S.CartButton>
         </S.ButtonsWrapper>
       </S.Wrapper>
-      <Cart showCart={showCart} />
+      <Cart showCart={showCart} setShowCart={setShowCart} />
     </S.StyledHeader>
   );
 };
