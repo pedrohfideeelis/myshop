@@ -61,6 +61,35 @@ export const AddToCartButton = styled.button`
   padding: 0 1rem;
   background-color: #6095ed;
   color: white;
+  display: flex;
   align-items: center;
-  gap: 0.4rem;;
+  justify-content: center;
+  gap: 0.4rem;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    padding-bottom: 1px;
+  }
+`;
+
+export const RemoveFromCartButton = styled.button`
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 250px;
+  padding: 0 1rem;
+  background-color: #ae474c;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+
+  svg {
+    color: black;
+    width: 16px;
+    height: 16px;
+    padding-bottom: 1px;
+  }
 `;
